@@ -1,5 +1,5 @@
 #
-# SPDX-FileCopyrightText: The LineageOS Project
+# SPDX-FileCopyrightText: Resurrected Remix OS Project
 # SPDX-License-Identifier: Apache-2.0
 #
 
@@ -7,13 +7,19 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit_only.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Inherit some common Lineage stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+# Inherit some common Resurrected Remix stuff.
+$(call inherit-product, vendor/rr/config/common_full_phone.mk)
+
+WITH_GMS := true
+RR_MAINTAINER := DVRKHz
+TARGET_FACE_UNLOCK_SUPPORTED := true
+TARGET_SUPPORTS_BLUR := true
+TARGET_UNOFFICIAL_BUILD_ID := true
 
 # Inherit from onyx device
 $(call inherit-product, device/xiaomi/onyx/device.mk)
 
-PRODUCT_NAME := lineage_onyx
+PRODUCT_NAME := rr_onyx
 PRODUCT_DEVICE := onyx
 PRODUCT_MANUFACTURER := Xiaomi
 PRODUCT_BRAND := POCO
